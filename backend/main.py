@@ -18,12 +18,11 @@ from llm import check_and_generate, extract_node_ids, summarize_results
 
 
 app = FastAPI()
-DB_PATH = Path(r"D:\DOCUMENTSS\graph-o2c\backend\data.db")
-
+DB_PATH = Path(__file__).resolve().parent / "data.db"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -36,7 +35,11 @@ class QueryRequest(BaseModel):
 
 @app.on_event("startup")
 def startup_event() -> None:
-    app.state.G = build_graph()
+    try:
+        app.state.G = build_graph()
+    except Exception as e:
+        print(f"[STARTUP ERROR] build_graph failed: {e}")
+        raise
 
 
 @app.get("/health")
