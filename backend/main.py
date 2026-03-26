@@ -22,13 +22,8 @@ DB_PATH = Path(r"D:\DOCUMENTSS\graph-o2c\backend\data.db")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "https://graph-o2c-fhbhvc30y-shuklanaina1111-7152s-projects.vercel.app",
-        "*"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
