@@ -11,8 +11,7 @@ import 'reactflow/dist/style.css';
 
 import ReactFlow, { Background, Controls, MiniMap, ReactFlowProvider } from 'reactflow';
 
-const BACKEND = 'http://127.0.0.1:8000';
-
+const BACKEND = 'https://graph-o2c.onrender.com';
 const colorByType: Record<string, string> = {
   Customer: '#10b981',
   SalesOrder: '#6366f1',
