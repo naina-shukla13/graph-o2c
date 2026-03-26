@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Set, Tuple
 import networkx as nx
 
 
-DB_PATH = Path(r"D:\DOCUMENTSS\graph-o2c\backend\data.db")
+DB_PATH = Path(__file__).resolve().parent / "data.db"
 
 
 def _as_str(value: Any) -> str:
