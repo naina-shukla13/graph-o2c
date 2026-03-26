@@ -17,13 +17,13 @@ from .graph_builder import build_graph, find_order_chain, get_graph_sample, get_
 from llm import check_and_generate, extract_node_ids, summarize_results
 
 
-app = FastAPI(title="Graph O2C API")
+app = FastAPI()
 DB_PATH = Path(r"D:\DOCUMENTSS\graph-o2c\backend\data.db")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
