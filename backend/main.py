@@ -1,3 +1,4 @@
+
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
@@ -10,7 +11,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from graph_builder import build_graph, find_order_chain, get_graph_sample, get_neighbors
+from .graph_builder import build_graph, find_order_chain, get_graph_sample, get_neighbors
 from llm import check_and_generate, extract_node_ids, summarize_results
 
 
